@@ -1,38 +1,8 @@
----
-layout: compress
----
-
-{% include base_path %}
-
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
-
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {% if page.redirect_url %}
-      <script>
-        window.location.replace("{{ page.redirect_url }}");
-      </script>
-    {% else %}
-      {{ content }}
-    {% endif %}
-
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url={{ page.redirect_url }}">
+  <link rel="canonical" href="{{ page.redirect_url }}">
+</head>
+<body></body>
 </html>
