@@ -16,7 +16,14 @@ layout: compress
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    {{ content }}
+    {% if page.redirect_url %}
+      <script>
+        window.location.replace("{{ page.redirect_url }}");
+      </script>
+    {% else %}
+      {{ content }}
+    {% endif %}
+
 
     <div class="page__footer">
       <footer>
